@@ -14,6 +14,15 @@ Eric got 41% and was awarded a grade c
 Alex got 38% and was awarded a grade f
 EOF
 
+selected_output = <<EOF
+Brian got 56% and was awarded a grade c
+Cerys got 55% and was awarded a grade c
+Debs got 92% and was awarded a grade a
+Eric got 41% and was awarded a grade c
+Fiona got 72% and was awarded a grade b
+EOF
+
+
 # do the test
 describe 'display_sorted' do
 	it 'displays the correct marks' do
