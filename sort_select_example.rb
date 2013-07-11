@@ -1,12 +1,12 @@
 [3, 2, 1].sort
 
-['apple', 'banana', 'pear'].sort
+['apple', 'pear', 'banana'].sort
 
 
 
-['apple', 'banana', 'pear'].sort {|a, b| a.length <=> b.length }
+['apple', 'pear', 'banana'].sort {|a, b| a.length <=> b.length }
 
 
 [3, 2, 1].select {|x| x < 2}
 
-['apple', 'banana', 'pear'].select { |w| w.length <= 5 }
+['apple', 'pear', 'banana'].select { |w| w.length <= 5 }
