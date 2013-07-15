@@ -78,19 +78,6 @@ puts a.join('_')
 # A few other curiosities 
 # -----------------------
 
-# You probably won't use these very often.
-# Ignore these if you want!
-
-a = [1,2,3]
-b = [3,4,5]
-
-a + b
-a - b    
-a & b
-a && b
-a | b
-
-a.combination(2)
 
 a.zip(b)
 
