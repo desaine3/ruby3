@@ -34,11 +34,6 @@ b.length
 a.include?(39)
 a.include?(49)
 
-a.min
-a.max
-
-a.class
-
 a.reverse
 a   # has this changed a?
 a.reverse!
@@ -49,7 +44,6 @@ a   # has this changed a?
 a.sort!
 a   # has this changed a?
 
-a.shuffle
 
 # Adding elements
 # ---------------
@@ -62,7 +56,6 @@ a   # What is a now?
 a[7] = 7
 a   # What else has been added?
 
-a.push(8)
 a << 9  # This one's important - you'll see it a lot
 
 a << "cat"  # is this ok?
@@ -78,11 +71,11 @@ puts a.join('_')
 # A few other curiosities 
 # -----------------------
 
+a = [1, 2, 3]
+b = [4, 5, 6]
 
 a.zip(b)
 
 c = [1,2,3,[4,5]]
 c.flatten
-
-
 
