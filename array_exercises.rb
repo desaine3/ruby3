@@ -4,7 +4,7 @@
 # arrayify is a function that takes an argument
 # and turns it into an array e.g.
 #
-#  arrayify(2) #=> 2
+#  arrayify(2) #=> [2]
 def arrayify(n)
     return [n]
 end
