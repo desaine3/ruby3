@@ -5,8 +5,17 @@ require 'minitest/autorun'
 # load in array_block_exercises.rb
 require_relative 'array_block_exercises'
 
+describe 'print_elements' do
+    it 'prints the elements' do
+        output =<<EOF
+a is an element
+b is an element
+EOF
+        assert_output(output) {print_elements['a', 'b']}
+    end
+end
 
-describe 'star_bars' do
+ddescribe 'star_bars' do
     it "should draw bars of stars" do
         output=<<EOF
 *
@@ -37,11 +46,11 @@ describe 'reflect' do
     it "should reflect a single word" do
         assert_equal "dog", reflect("god")
     end
-    it "should reverse the order of the words" do
-        assert_equal "b a", reflect("a b")
+    it "should not reverse the order of the words" do
+        assert_equal "a b", reflect("a b")
     end
     it "should work on sentences" do
-        assert_equal "hello tom day", reflect("yad mot olleh")
+        assert_equal "hello tom day", reflect("olleh mot yad")
     end
 end
 

@@ -46,9 +46,10 @@ def square_the_values(array_of_integers)
 end
 
 
-# reflect takes a sentence and reflects it
+# reflect takes a sentence and reflects each word
+# in it
 # 
-#   reflect("slap a dog") #=> "god a pals"
+#   reflect("slap a dog") #=> "pals a god"
 #
 def reflect(sentence)
     # TODO
