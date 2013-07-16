@@ -2,7 +2,7 @@
 require 'minitest/spec'
 require 'minitest/autorun'
 
-# load in array_examples.rb
+# load in array_exercises.rb
 require_relative 'array_exercises'
 
 describe 'arrayify' do
@@ -12,83 +12,83 @@ describe 'arrayify' do
     end
 end
 
-describe 'star_bars' do
-    it "should draw bars of stars" do
-        output=<<EOF
-*
-***
-**
-EOF
-        assert_output(output) {star_bars([1,3,2])}
-    end
-    it "should return nil" do
-        assert_equal nil, star_bars([2])
+describe 'three_array' do
+    it "should turn parameters into array" do
+        assert_equal [4,5,6], three_array(4,5,6)
     end
 end
 
-describe 'sum' do
-    it "should calculate the sum" do
-        assert_equal 5, sum([1,2,2])
-        assert_equal 5, sum([1,2,2,3,-3])
+describe 'first_and_last' do
+    it "should return array with first and last elts" do
+        assert_equal [3, 4], first_and_last([3, 2, 1, 4])
+        assert_equal [3, 3], first_and_last([3])
     end
 end
 
-describe 'square_the_values' do
-    it "should return the values squared" do
-        assert_equal [1, 4, 9], square_the_values([1,2,3])
-    end
-end
-
-describe 'reflect' do
-    it "should reflect a single word" do
-        assert_equal "dog", reflect("god")
-    end
-    it "should reverse the order of the words" do
-        assert_equal "b a", reflect("a b")
-    end
-    it "should work on sentences" do
-        assert_equal "hello tom day", reflect("yad mot olleh")
-    end
-end
-
-describe 'big_numbers' do
-    it "should select numbers over 100" do
-        assert_equal [150, 270], big_numbers([1, 100, 150, 5, 270])
-    end
-end
-
-describe 'sum_of_big_numbers' do
-    it "should sum big numbers" do
-        assert_equal 300, sum_of_big_numbers([100,150, 150, 70, 5])
-    end
-end
-
-describe 'long words' do
-    it "should filter out words shorter than n" do
-        assert_equal "beautiful day", long_words("it is a beautiful day")
-        assert_equal "hello", long_words("hello tom", 5)
-    end
-end
-
-describe 'interesting words' do
-    it "should use the default words" do
-        assert_equal ['cat'], interesting_words('a cat on the a')
-    end
-    it "should work with custom stop words" do
-        assert_equal ['moon', 'pig'], interesting_words("moon tree pig", ['tree'])
+describe 'last_two' do
+    it "should return the last two" do
+        assert_equal [5,6], last_two([1,2,3,4,5,6])
     end
 end
 
 
-describe 'shortest_first' do
-    it "should sort the shortest first" do
-        assert_equal ['a', 'be', 'top', 'rabbit'],shortest_first(['be', 'a','rabbit', 'top'])
+describe 'rotate1' do
+    it "should rotate everythign by 1" do
+        assert_equal [2,3,1], rotate1([1,2,3])
+        assert_equal [1], rotate1([1])
+    end
+end
+
+describe 'rotate2' do
+    it "should rotate everything by 2" do
+        assert_equal [3,1,2], rotate2([1,2,3])
+        assert_equal [1], rotate2([1])
     end
 end
 
 
-describe 'biggest_number' do
-    it "should return the biggest number" do
-        assert_equal 99, biggest_number([1,2,99,4])
+describe 'even_or_bust' do
+    it "should return even length arrays unscathed" do
+        assert_equal ['cat', 'dog'], even_or_bust(['cat', 'dog'])
+        assert_equal [1,2,3,4], even_or_bust([1,2,3,4])
+    end
+    it "should kill odd length arrays" do
+        assert_equal [], even_or_bust(['a', 'b', 'c'])
+        assert_equal [], even_or_bust([1])
     end
 end
+
+
+describe 'needle_haystack' do
+    it "should find the needle" do
+        assert_equal true, needle_haystack(['needle', 5])
+        assert_equal true, needle_haystack(['cat', 3, 'needle', 5])
+    end
+    it "should not find no needle" do
+        assert_equal false, needle_haystack([12,3,4])
+    end
+end
+
+
+describe 'sum_of_largest_two' do
+    it "should sum the largest two" do
+        assert_equal 56, sum_of_largest_two([1,6, 5,4, 50])
+    end
+end
+
+
+describe 'add_a_dog' do
+    it "should add dog to the end" do
+        assert_equal [1,2,'dog'], add_a_dog([1,2])
+    end
+end
+
+describe 'underscorize' do
+    it "should underscore a sentence" do
+        assert_equal "this_is_underscored", underscorize("this is underscored")
+    end
+end
+
+describe 'interleave' do
+    it "should interleave two arrays" do
+        assert_equal [1,'a', 2, 'b'], interleave([1,2], ['a', 'b'])
