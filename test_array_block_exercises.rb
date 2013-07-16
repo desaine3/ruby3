@@ -11,7 +11,7 @@ describe 'print_elements' do
 a is an element
 b is an element
 EOF
-        assert_output(output) {print_elementsi(['a', 'b'])}
+        assert_output(output) {print_elements(['a', 'b'])}
     end
 end
 
