@@ -15,7 +15,7 @@ EOF
     end
 end
 
-ddescribe 'star_bars' do
+describe 'star_bars' do
     it "should draw bars of stars" do
         output=<<EOF
 *
