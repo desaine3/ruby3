@@ -92,3 +92,5 @@ end
 describe 'interleave' do
     it "should interleave two arrays" do
         assert_equal [1,'a', 2, 'b'], interleave([1,2], ['a', 'b'])
+    end
+end
