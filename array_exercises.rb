@@ -18,7 +18,7 @@ end
 #  three_array(1, 2, 3) #=> [1, 2, 3]
 #
 def three_array(a, b, c)
-    # TODO
+    return [a,b,c]
 end
 
 # returns a new array containing the 
@@ -29,7 +29,7 @@ end
 #   first_and_last([1]) #=> [1, 1]
 #
 def first_and_last(input_array)
-    # TODO
+    return [input_array.first, input_array.last]
 end
 
 # last_two should return an array containing the last
@@ -38,7 +38,10 @@ end
 #   last_two([1,2,3,4,5]) #=> [4, 5]
 #
 def last_two(input_array)
-    # TODO
+    a = (input_array.length - input_array.length) -1
+    first = input_array[a]
+    second = input_array[a-1]
+    return [second,first]
 end
 
 # rotate1 takes the input array and returns a new
@@ -48,7 +51,12 @@ end
 #   rotate1([1,2,3,4]) #=> [2,3,4,1]
 #
 def rotate1(input_array)
-    # TODO
+
+    last = input_array.first
+    temp = input_array[1..-1]
+    temp << last
+
+    return temp
 end
 
 # rotate2 is the same as rotate1, except the first
@@ -57,7 +65,17 @@ end
 #   rotate2([1,2,3,4]) #=> [3,4,1,2]
 #
 def rotate2(input_array)
-    # TODO
+    if input_array.length >1
+
+         last= input_array[0..1]
+         temp = input_array[2..-1]
+         final_array = [temp,last].flatten
+    else 
+        final_array = input_array
+    end
+
+
+    return final_array
 end
 
 # even_or_bust returns the original array if it has
@@ -69,7 +87,13 @@ end
 #    even_or_bust([1,2,3,4]) #=> [1,2,3,4]
 #
 def even_or_bust(input_array)
-    # TODO
+    #condition = input_array.length
+
+    if input_array.length.even?
+        return input_array
+    else
+     return []
+    end
 end
 
 # needle_haystack returns true if the word 'needle'
@@ -79,7 +103,8 @@ end
 #   needle_haystack([4,'needle', 8]) #=> true
 #
 def needle_haystack(haystack)
-    # TODO
+   return haystack.include?('needle')
+    
 end
 
 # sum_of_largest_two returns the sum of the largest
@@ -88,7 +113,8 @@ end
 #   sum_of_largest_two([11, 2, 3, 4]) #=> 15
 #
 def sum_of_largest_two(array_of_integers)
-    # TODO
+   array_of_integers.sort!
+   sum = array_of_integers[-1] + array_of_integers[-2]
 end
 
 # add_a_dog returns the input array with the word
@@ -97,7 +123,8 @@ end
 #    add_a_dog([1,2,3]) #=> [1,2,3,'dog']
 #
 def add_a_dog(input_array)
-    # TODO
+    input_array << 'dog'
+    return input_array
 end
 
 # underscorize takes a sentence and replaces
@@ -106,7 +133,9 @@ end
 #   underscorize("the cat sat on the mat") #=> "the_cat_sat_on_the_mat"
 #
 def underscorize(sentence)
-    # TODO
+    newSen = sentence.split()
+    newSen = newSen.join('_')
+    return newSen
 end
 
 
@@ -116,5 +145,6 @@ end
 #   interleave([1,2,3], [4,5,6]) #=> [1,3,2,4,3,6]
 #
 def interleave(array1, array2)
-    # TODO
+   temp =  array1.zip(array2).flatten
+   return temp
 end
