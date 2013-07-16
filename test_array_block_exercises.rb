@@ -68,7 +68,7 @@ end
 
 describe 'long words' do
     it "should filter out words shorter than n" do
-        assert_equal "beautiful day", long_words("it is a beautiful day")
+        assert_equal "beautiful day", long_words("it is a beautiful day", 3)
         assert_equal "hello", long_words("hello tom", 5)
     end
 end
