@@ -91,7 +91,7 @@ end
 #
 #    interesting_words("the cat sat on the mat", ["the", "on"]) #=> ["cat", "sat", "mat"]
 #
-def interesting_words(sentence, stop_word_array)
+def interesting_words(sentence, stop_word_array=['a', 'the', 'on'])
     # TODO
 end
 

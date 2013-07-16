@@ -43,3 +43,17 @@ def display_marks
     return nil
 end
 
+
+# Extension work:
+# --------------
+
+
+# Like display_marks, except the students are printed in
+# order of total mark (highest first)
+def display_sorted
+end
+
+# Like display_mards, except the students are only printed if
+# they pass (got above an f)
+def display_selected
+end
