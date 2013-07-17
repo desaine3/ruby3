@@ -34,11 +34,12 @@ def display_marks
     marks = CSV.read('marks.csv', :headers => true).to_a
 
     # TODO: fix the mistakes in the code below this point
-    student_total = 0
-    marks.each do |line|
+   
+    marks[1..-1].each do |line|
+        student_total = 0
         name = line.first
         line[1..-1].each {|g| student_total += g.to_i }
-        summary(name, student_total, grade(student_total))
+       puts  summary(name, student_total, grade(student_total))
     end
     return nil
 end
@@ -51,9 +52,42 @@ end
 # Like display_marks, except the students are printed in
 # order of total mark (highest first)
 def display_sorted
+     # load in the marks
+     marks = CSV.read('marks.csv', :headers => true).to_a
+
+    names_with_totals = marks[1..-1].map do |line|
+        student_total = 0
+        name = line.first
+        line[1..-1].each {|g| student_total += g.to_i }
+        [name, student_total]
+    end
+
+    # note how a and b are back to front to sort larges first
+    names_with_totals.sort {|a,b| b[1] <=> a[1]}.each do |name, total|
+        # note how because we're iterating over an array of
+        # two element arrays, we can just pass the two elements
+        # as named arguments to the block
+        puts summary(name, total, grade(total))
+    end
+
+    return nil
 end
 
 # Like display_mards, except the students are only printed if
 # they pass (got above an f)
 def display_selected
+     # load in the marks
+    marks = CSV.read('marks.csv', :headers => true).to_a
+
+    # TODO: fix the mistakes in the code below this point
+   
+    marks[1..-1].each do |line|
+        student_total = 0
+        name = line.first
+        line[1..-1].each {|g| student_total += g.to_i }
+            if grade(student_total)  != 'f'
+                puts  summary(name, student_total, grade(student_total))
+            end
+        end
+    return nil
 end
